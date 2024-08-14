@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    </div>
+    <meta charset="utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+    <title>Hard</title>  
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />  
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> 
+    <style>
+h3 {
+  position:absolute;
+  left: 495px;
+  top: 300px;
+}
+h2 {
+  position:absolute;
+  left: 695px;
+  top: 303px;
+}
+</style> 
+    </head>
+    <body bgcolor="black" style="color: white;">
+        <py-env>
+            - numpy
+          </py-env>
+        <center>
+        <h1 style="color: aqua;font-size: 4vw;">Click Cric🏏</h1>
+        <br>
+        <br>
+        <h1 style="color:sandybrown;font-size: 2vw;">lets click👇🏼</h1>
+        <br>
+        <br>
+        <button id = "show_output"  type = "submit" pys-onClick="demo" style="color:black;background-color: burlywood;width: 6%;font-size: 2vw; ">6s</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <button id = "show_outputs"  type = "submit" pys-onClick="demo1" style="color: black;background-color: burlywood;width: 6%;font-size: 2vw;">4r</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <button id = "show_outputss"  type = "submit" pys-onClick="demo2" style="color: black;background-color: burlywood;width: 6%;font-size: 2vw;">3s</button>
+        <br>
+        <br>
+        <br>
+        <h3 style="color:sandybrown;font-size: 2vw;">Input score</h3>
+        <h2 style="color:sandybrown;font-size: 2vw;">Attacking Score</h2>
+        <br>
+        <br>
+        <textarea dir="rtl" id="output_divs" style="font-size: 25pt; color:sandybrown;background-color: black; margin-top: 10px;margin-bottom: 10px;" readonly></textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <textarea  id="output_div" style="font-size: 25pt; color:sandybrown;background-color:black; margin-top: 10px;margin-bottom: 10px;" readonly></textarea>
+        <br>
+        <textarea  id="output_divss" style="font-size: 25pt; color:sandybrown;background-color:black; margin-top: 10px;margin-bottom: 10px;" readonly></textarea>
+
+        <button id = "reset"  type = "submit" pys-onClick="clear" style="color: black;background-color: burlywood;width: 6%;font-size: 2vw;">Reset</button>
+        <br>
+        <br>
+        <py-script> 
+            import numpy as np
+
+            global count
+            count=0
+
+                
+            outputs =Element("output_divs")
+            outputss=Element("output_divss")
+            
+
+            def demo(*args, **kwargs):  
+                global count
+                r="6s"
+                list1=["3s","4r","6s","6s","3s"]
+                n=np.random.choice(list1)
+                if r==n:
+                  output.write(f"{n}\nout")
+                  outputs.write(r)
+                else:
+                  output.write(f"{n}")
+                  outputs.write(r)
+                  count=count+int(r[0])
+                outputss.write(f"Total Score : {count}")
+
+
+           
+
+            def demo1(*args,**kwargs):
+                global count
+                r="4r"
+                list1=["3s","4r","6s","6s","3s"]
+                n=np.random.choice(list1)
+                if r==n:
+                  output.write(f"{n}\nout")
+                  outputs.write(r)
+                else:
+                  output.write(f"{n}")
+                  outputs.write(r)
+                  count=count+int(r[0])
+                outputss.write(f"Total Score : {count}")
+
+
+            
+            
+            def demo2(*args,**kwargs):
+              global count
+              r="3s"
+              list1=["3s","4r","6s","6s","3s"]
+              n=np.random.choice(list1)
+              if r==n:
+                output.write(f"{n}\nout")
+                outputs.write(r)
+              else:
+                output.write(f"{n}")
+                outputs.write(r)
+                count=count+int(r[0])
+              outputss.write(f"Total Score : {count}")
+
+            outputss.write(f"Total Score : {count}")
+
+            def clear(*args,**kwargs):
+              global count
+              count=0
+              output.write("")
+              outputs.write("")
+              outputss.write("")
+
+            </py-script>
+            
+
+       </center>
+        
+    </body>
+</div>
+</html>
